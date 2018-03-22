@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Url Shortener</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <span class="glyphicon glyphicon-link"></span>
+    <h1>Url Shortener</h1>
+    <h5>matthewwareing.com</h5>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <form id="form1" class="form" action="/shorten" method="POST">
+          <div class="input-group input-group-lg">
+            <input id="input1" class="form-control" type="text" placeholder="Url to Shorten" name="url">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-lg btn-shorten" id="btn1">Submit</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <ul class="urls">
+      <% for(var i = 0; i < urls.length; i++) {%>
+        <li class="url">
+          <span>
+            <%= urls[i].long_url %>
+          </span>
+          <span>
+            <%= urls[i].sort %>
+          </span>
+        </li>
+        <% } %>
+    </ul>
+  </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
